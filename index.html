@@ -36,19 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="claire.html">Claire and Luke</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dad.html">Tony and Charli</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="mom.html">The Lee Family</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="towns.html">The Becker Family</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="us.html">Kay and Dan</a>
+              <a class="nav-link" href="bios.html">Bios</a>
             </li>
           </ul>
         </div>
@@ -57,7 +45,9 @@
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Around the World in Five Family Kitchens</h1>
-          <p class="lead">Recipes from the Becker, Cadena, and Lee families</p>
+          <p class="lead">
+            Recipes from the Becker, Cadena, Costello, Lee, and Wong families
+          </p>
         </div>
       </div>
     </header>
@@ -74,110 +64,48 @@
         that is straightforward, I think pictures make the recipe infinitely
         more enticing. As I kept going, I found that making each recipe made me
         better understand the possible challenges each might present. I’d like
-        to share the stories, pictures, and recipes with all of you in a way
-        that connects the dishes to the family members who contributed them,
-        almost like a virtual potluck.
+        to share the stories, pictures, and recipes with all of you in a virtual
+        index that connects the dishes to the family members who contributed
+        them, almost like a virtual potluck.
       </p>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-md-4 py-5">
-            <div class="card shadow p-3 mb-5 bg-white rounded">
-              <img
-                src="img/claireandluketile.jpg"
-                class="card-img-top"
-                alt="Claire and Luke"
+    </main>
+    <main class="container">
+      <div class="row py-5">
+        <div class="col">
+          <form>
+            <div class="form-group">
+              <label for="recipe-filter">Filter</label>
+              <input
+                type="text"
+                class="form-control"
+                id="recipe-filter"
+                placeholder="Filter recipes by name"
               />
-              <div class="card-body">
-                <h5 class="card-title">Claire and Luke</h5>
-                <p class="card-text">
-                  Claire's adventures in baking are something we've all admired
-                  from afar and savored when we're lucky enough to be able to
-                  try!
-                </p>
-                <a href="claire.html" class="btn btn-primary mr-2"
-                  >Claire's recipes</a
-                >
-              </div>
             </div>
-          </div>
-          <div class="col-sm-6 col-md-4 py-5">
-            <div class="card shadow p-3 mb-5 bg-white rounded">
-              <img
-                src="img/tonyandcharlitile.jpg"
-                class="card-img-top"
-                alt="Tony and Charli"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Tony and Charli</h5>
-                <p class="card-text">
-                  Recipes from Tony's childhood to his grillmaster days to
-                  Charli's vegetarian influence.
-                </p>
-                <a href="dad.html" class="btn btn-primary mr-2"
-                  >Tony's recipes</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 py-5">
-            <div class="card shadow p-3 mb-5 bg-white rounded">
-              <img
-                src="img/leefamilytile.jpg"
-                class="card-img-top"
-                alt="The Lee Family"
-              />
-              <div class="card-body">
-                <h5 class="card-title">The Lee Family</h5>
-                <p class="card-text">
-                  Recipes from Edna Lee, the Wong family, and all our favorites
-                  from Georgia.
-                </p>
-                <a href="mom.html" class="btn btn-primary mr-2"
-                  >Georgia's recipes</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 py-5">
-            <div class="card shadow p-3 mb-5 bg-white rounded">
-              <img
-                src="img/beckerfamilytile.jpg"
-                class="card-img-top"
-                alt="The Becker Family"
-              />
-              <div class="card-body">
-                <h5 class="card-title">The Becker Family</h5>
-                <p class="card-text">
-                  Staples from Dan's childhood and a few more recent favorites
-                  of Art and Ellen's.
-                </p>
-                <a href="towns.html" class="btn btn-primary mr-2"
-                  >Ellen's recipes</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 py-5">
-            <div class="card shadow p-3 mb-5 bg-white rounded">
-              <img
-                src="img/kayanddantile.jpg"
-                class="card-img-top"
-                alt="Kay and Dan"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Kay and Dan</h5>
-                <p class="card-text">
-                  Recipes we have adopted on our own and together!
-                </p>
-                <a href="us.html" class="btn btn-primary mr-2">Kay's recipes</a>
-              </div>
-            </div>
-          </div>
+          </form>
+
+          <table class="table table-striped table-hover recipes">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="non-numeric">Recipe Name</th>
+                <th scope="col">Dish Type</th>
+                <th scope="col">Contributor</th>
+                <th scope="col">Page Number</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
       </div>
     </main>
+
     <footer>
       <p>Page created by Kay Cadena for IMT 549, Spring 2020</p>
     </footer>
+    <script src="js/recipes.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      renderRecipes(RECIPES);
+    </script>
   </body>
 </html>
